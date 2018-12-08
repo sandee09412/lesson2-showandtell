@@ -2,7 +2,7 @@ steps:
 # Build the firebase image
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/firebase', './dockerfiles/firebase' ]
-# Deploy to firebase
+# Deploy to firebase, using token
 - name: 'gcr.io/$PROJECT_ID/firebase'
   args: ['deploy', '--token', '${_FIREBASE_TOKEN}']
 # Optionally you can keep the build images
